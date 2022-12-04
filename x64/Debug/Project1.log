@@ -1,0 +1,5 @@
+﻿  ObjLoader.cpp
+D:\OpenGL Project\3dMesh\Project1\Game Logic\System\ObjLoader.cpp(41,42): warning C4101: 'uvIndex': unreferenced local variable
+D:\OpenGL Project\3dMesh\Project1\Game Logic\System\ObjLoader.cpp(41,54): warning C4101: 'normalIndex': unreferenced local variable
+D:\OpenGL Project\3dMesh\Project1\Game Logic\System\ObjLoader.cpp(69): warning C4715: 'ObjLoader::loadObj': not all control paths return a value
+  Project1.vcxproj -> D:\OpenGL Project\3dMesh\x64\Debug\Project1.exe
