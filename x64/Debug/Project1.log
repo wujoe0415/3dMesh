@@ -1,5 +1,13 @@
-﻿  ObjLoader.cpp
-D:\OpenGL Project\3dMesh\Project1\Game Logic\System\ObjLoader.cpp(41,42): warning C4101: 'uvIndex': unreferenced local variable
-D:\OpenGL Project\3dMesh\Project1\Game Logic\System\ObjLoader.cpp(41,54): warning C4101: 'normalIndex': unreferenced local variable
-D:\OpenGL Project\3dMesh\Project1\Game Logic\System\ObjLoader.cpp(69): warning C4715: 'ObjLoader::loadObj': not all control paths return a value
+﻿  Dinosaur.cpp
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.cpp(22,10): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.cpp(25,12): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
   Project1.vcxproj -> D:\OpenGL Project\3dMesh\x64\Debug\Project1.exe

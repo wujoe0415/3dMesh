@@ -16,13 +16,15 @@ public:
 	Renderer(const char* textureName, const char* shaderName, vector<glm::vec3>& vertices = DEFAULT_VECTOR);
 	void ChangeTexture(char* newTexture);
 	void ChangeShader(char* newShader);
-	void ChangeVertex(vector<glm::vec3>& vertices);
+	void ChangeVertex(vector<glm::vec3>& vertices, vector<unsigned int>& verticesIndice);
 	void Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, glm::vec3 color);
 	void Render(glm::mat4 model, glm::vec3 color);
+	void Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, glm::vec3 color, unsigned int indices_size);
 	void InitRenderData(vector<glm::vec3>& vertices = DEFAULT_VECTOR);
 	Texture2D texture;
 	Shader shader;
 private:
 	unsigned int VAO;
+	unsigned int vertexsize;
 	static vector<glm::vec3> DEFAULT_VECTOR;
 };
