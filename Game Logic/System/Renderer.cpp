@@ -135,6 +135,19 @@ void Renderer::Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, gl
 	texture.Bind();
 
 	this->shader.Use();
+	shader.SetVector3f("light.position", 1.2f, 1.0f, 1.0f);
+	shader.SetVector3f("viewPos", 0.0f, 0.0f, -4.0f);
+	// light properties
+	shader.SetVector3f("light.ambient", 1.0f, 1.0f, 1.0f); // note that all light colors are set at full intensity
+	shader.SetVector3f("light.diffuse", 1.0f, 1.0f, 1.0f);
+	shader.SetVector3f("light.specular", 1.0f, 1.0f, 1.0f);
+
+	// material properties
+	shader.SetVector3f("material.ambient", 0.05f, 0.1f, 0.06f);
+	shader.SetVector3f("material.diffuse", 0.3f, 0.50980392f, 0.50980392f);
+	shader.SetVector3f("material.specular", 0.50196078f, 0.50196078f, 0.50196078f);
+	shader.SetFloat("material.shininess", 2.0f);
+
 	glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)Window::getInstance().getWindowWidth() / (float)Window::getInstance().getWindowHeight(), 0.1f, 100.0f);
 	shader.SetMatrix4("projection", projection);
 
@@ -144,11 +157,6 @@ void Renderer::Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, gl
 
 	glm::mat4 model = glm::mat4(1.0f);
 
-	//model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0.5f, 1.0f, 0.0f));
-	  // first translate (transformations are: scale happens first, then rotation, and then final translation happens; reversed order)
-	//model = glm::translate(model, glm::vec3(0.5f * size.x, 0.5f * size.y, 0.0f)); // move origin of rotation to center of quad
-	//model = glm::translate(model, glm::vec3(-0.5f * size.x, -0.5f * size.y, 0.0f)); // move origin back
-	
 	model = glm::translate(model, position);
 
 	const glm::mat4 transformX = glm::rotate(glm::mat4(1.0f),

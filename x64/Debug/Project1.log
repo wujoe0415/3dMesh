@@ -1,13 +1,3 @@
-﻿  Dinosaur.cpp
-D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.cpp(22,10): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.cpp(25,12): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
+﻿  Renderer.cpp
+D:\OpenGL Project\3dMesh\Project1\Game Logic\System\Renderer.cpp(112,30): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
   Project1.vcxproj -> D:\OpenGL Project\3dMesh\x64\Debug\Project1.exe
