@@ -48,12 +48,12 @@ void Dino::Normalize()
 void Dino::InputHandler() {
 	if (!lastMouseisDown && mouse->getIsMouseDown(GLFW_MOUSE_BUTTON_LEFT)) {
 		lastMouseisDown = true;
-		cout << "down";
+		MouseDown();
 	}
 	else if (mouse->getIsMouseDown(GLFW_MOUSE_BUTTON_LEFT))
-		cout << "Drag";
+		MouseMove();
 	else if (lastMouseisDown && !mouse->getIsMouseUP(GLFW_MOUSE_BUTTON_LEFT)) {
 		lastMouseisDown = false;
-		cout << "up";
+		MouseUp();
 	}
 }

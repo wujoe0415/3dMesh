@@ -40,16 +40,20 @@ private:
 		return v;
 	}
 	void MouseDown() {
-		cout << "Down";
+		//cout << "Down";
 		//set radous
 		float radius = glm::length(glm::vec2(1, 1));
-		this->lastPos = Projection(1, 1);
+		double x, y;
+		glfwGetCursorPos(Window::sWindow, &x, &y);
+		this->lastPos = Projection((float)x, (float)y);
 	}
 	void MouseMove() {
+		double x, y;
+		glfwGetCursorPos(Window::sWindow, &x, &y);
 		float curPos[3],
 			dx, dy, dz;
 		/* compute position on hemisphere */
-		glm::vec3 nextMove = Projection(1, 1);
+		glm::vec3 nextMove = Projection((float)x, (float)y);
 		dx = nextMove.x - lastPos.x;
 		dy = nextMove.y - lastPos.y;
 		dz = nextMove.z - lastPos.z;
@@ -64,6 +68,6 @@ private:
 		}
 	}
 	void MouseUp() {
-		cout << "Release";
+		//cout << "Release";
 	}
 };
