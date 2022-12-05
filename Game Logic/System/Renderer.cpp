@@ -103,11 +103,11 @@ void Renderer::ChangeVertex(vector<glm::vec3>& vertices, vector<unsigned int>& i
 
 	// position attribute
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-	//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 	// texture coord attribute
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
-	//glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+	//glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 	vertexsize = vertices.size();
 }
@@ -135,18 +135,23 @@ void Renderer::Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, gl
 	texture.Bind();
 
 	this->shader.Use();
-	shader.SetVector3f("light.position", 1.2f, 1.0f, 1.0f);
-	shader.SetVector3f("viewPos", 0.0f, 0.0f, -4.0f);
-	// light properties
-	shader.SetVector3f("light.ambient", 1.0f, 1.0f, 1.0f); // note that all light colors are set at full intensity
-	shader.SetVector3f("light.diffuse", 1.0f, 1.0f, 1.0f);
-	shader.SetVector3f("light.specular", 1.0f, 1.0f, 1.0f);
+	//shader.SetVector3f("light.position", 1.2f, 1.0f, 1.0f);
+	//shader.SetVector3f("viewPos", 0.0f, 0.0f, 3.0f);
+	//// light properties
+	//shader.SetVector3f("light.ambient", 1.0f, 1.0f, 1.0f); // note that all light colors are set at full intensity
+	//shader.SetVector3f("light.diffuse", 1.0f, 1.0f, 1.0f);
+	//shader.SetVector3f("light.specular", 1.0f, 1.0f, 1.0f);
 
-	// material properties
-	shader.SetVector3f("material.ambient", 0.05f, 0.1f, 0.06f);
-	shader.SetVector3f("material.diffuse", 0.3f, 0.50980392f, 0.50980392f);
-	shader.SetVector3f("material.specular", 0.50196078f, 0.50196078f, 0.50196078f);
-	shader.SetFloat("material.shininess", 2.0f);
+	//// material properties
+	//shader.SetVector3f("material.ambient", 0.2f, 0.2f, 0.2f);
+	//shader.SetVector3f("material.diffuse", 1.0f, 0.5f, 1.0f);
+	//shader.SetVector3f("material.specular", 0.2f, 0.2f, 0.2f);
+	//shader.SetFloat("material.shininess", 1.0f);
+
+	shader.Use();
+	shader.SetVector3f("objectColor", 1.0f, 0.5f, 0.31f);
+	shader.SetVector3f("lightColor", 1.0f, 1.0f, 1.0f);
+	shader.SetVector3f("lightPos", 1.2f, 1.0f, 2.0f);
 
 	glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)Window::getInstance().getWindowWidth() / (float)Window::getInstance().getWindowHeight(), 0.1f, 100.0f);
 	shader.SetMatrix4("projection", projection);

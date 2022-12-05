@@ -34,6 +34,7 @@ int main(void)
     // Initialize Input callback*/
     KeyInput::setupKeyInputs(*window);
     MouseInput::setupMouseInputs(*window);
+    glEnable(GL_DEPTH_TEST);
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window->sWindow))
     {
@@ -43,7 +44,7 @@ int main(void)
         glfwPollEvents();
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         /* Render here */
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         game->Draw();
         /* Swap front and back buffers */

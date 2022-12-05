@@ -1,7 +1,6 @@
 #include "MouseInput.h"
 #include <algorithm>
 
-
 std::vector<MouseInput*> MouseInput::_instances;
 
 MouseInput::MouseInput(std::vector<int> keysToMonitor) : _isEnabled(true) {
@@ -16,7 +15,7 @@ MouseInput::~MouseInput() {
 	// Remove this instance from the list of instances
 	_instances.erase(std::remove(_instances.begin(), _instances.end(), this), _instances.end());
 }
-bool MouseInput::getIsMouseUP(int key) {
+bool MouseInput::getIsMouseUp(int key) {
 	bool result = false;
 	if (_isEnabled) {
 		std::map<int, bool>::iterator it = _keys.find(key);

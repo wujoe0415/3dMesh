@@ -16,7 +16,7 @@ public:
 	// If this KeyInput is enabled and the given key is monitored,
 	// returns pressed state.  Else returns false.
 	bool getIsMouseDown(int key);
-	bool getIsMouseUP(int key);
+	bool getIsMouseUp(int key);
 	// See _isEnabled for details
 	bool getIsEnabled() { return _isEnabled; }
 	void setIsEnabled(bool value) { _isEnabled = value; }

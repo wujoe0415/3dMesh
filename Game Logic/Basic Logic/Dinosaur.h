@@ -42,7 +42,6 @@ private:
 	void MouseDown() {
 		//cout << "Down";
 		//set radous
-		float radius = glm::length(glm::vec2(1, 1));
 		double x, y;
 		glfwGetCursorPos(Window::sWindow, &x, &y);
 		this->lastPos = Projection((float)x, (float)y);
