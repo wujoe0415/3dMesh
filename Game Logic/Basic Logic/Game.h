@@ -10,6 +10,7 @@
 #include "System/SphereRenderer.h"
 #include "System/KeyInput.h"
 #include "Dinosaur.h"
+#include "System/Light.h"
 using namespace std;
 
 class Game {
@@ -19,6 +20,7 @@ private:
 	KeyInput* keyinputs;
 	Renderer* renderer;
 	Dino* dino;
+	vector<Light*> lights;
 public:
 	Game();
 	void Draw();

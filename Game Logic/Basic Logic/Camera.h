@@ -1,7 +1,11 @@
 #pragma once
-#include <GLFW/glfw3.h>
+#define GLFW_INCLUDE_NONE
 #include <glm/glm.hpp>
 #include <glm/gtc/constants.hpp>
+#include "System/Transform.h"
+#include "System/Window.h"
+#include <GLFW/glfw3.h>
+
 class Camera {
 public:
 	Camera()
@@ -13,6 +17,7 @@ public:
 		m_view(DirectX::XMMatrixIdentity()),
 		m_proj(DirectX::XMMatrixIdentity()),*/
 		m_viewNeedsUpdate(true) {
+		radius = 1;
 	}
 	Camera(float theta, float phi, float radius)
 		: m_theta(theta),
@@ -96,6 +101,9 @@ public:
 	//inline DirectX::XMMATRIX GetProj() { return m_proj; }
 
 private:
+	float radius;
+	glm::vec3 lastPos;
+	glm::vec3 Projection(int mouseX, int mouseY);
 	void UpdateViewMatrix();
 	void MouseDown();
 	void MouseMove();

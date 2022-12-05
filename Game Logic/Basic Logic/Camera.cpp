@@ -8,7 +8,6 @@
 
 #include <algorithm>
 
-
 void Camera::Rotate(float dTheta, float dPhi) {
 	m_viewNeedsUpdate = true;
 
@@ -65,8 +64,42 @@ void Camera::UpdateViewMatrix() {
 void Camera::UpdateProjectionMatrix(float clientWidth, float clientHeight, float nearClip, float farClip) {
 	//m_proj = DirectX::XMMatrixPerspectiveFovLH(0.25f * DirectX::XM_PI, clientWidth / clientHeight, nearClip, farClip);
 }
-void Camera::MouseDown() {}
-void Camera::MouseMove() {}
+glm::vec3 Camera::Projection(int mouseX, int mouseY) {
+	float d, a;
+	/* project x,y onto a hemisphere centered within width, height ,
+   note z is up here*/
+	glm::vec3 v;
+	v[0] = (2.0 * mouseX - (float)Window::getInstance().getWindowWidth()) / (float)Window::getInstance().getWindowWidth();
+	v[1] = ((float)Window::getInstance().getWindowHeight() - 2.0F * mouseY) / (float)Window::getInstance().getWindowHeight();
+	d = sqrt(v[0] * v[0] + v[1] * v[1]);
+	v[2] = cos((glm::pi<float>() / 2.0) * ((d < 1.0) ? d : 1.0));
+	a = 1.0 / sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
+	v[0] *= a; v[1] *= a; v[2] *= a;
+	return v;
+}
+
+void Camera::MouseDown() {
+//set radous
+	radius = glm::length(glm::vec2(1, 1));
+	lastPos = Projection(1, -1);
+}
+void Camera::MouseMove() {
+	float curPos[3],
+		dx, dy, dz;
+	/* compute position on hemisphere */
+	glm::vec3 nextMove = Projection(1, 1);
+	dx = nextMove.x - lastPos.x;
+	dy = nextMove.y - lastPos.y;
+	dz = nextMove.z - lastPos.z;
+	if (dx || dy || dz)
+	{
+		/* compute theta and cross product */
+		float angle = 90.0 * sqrt(dx * dx + dy * dy + dz * dz);
+		glm::vec3 axis = glm::cross(lastPos, nextMove);
+		/* update position */
+		lastPos = nextMove;
+	}
+}
 void Camera::MouseUp() {}
 void Camera::MouseWheel(int zDelta) {
 	Zoom((float)zDelta * m_cameraScrollFactor);

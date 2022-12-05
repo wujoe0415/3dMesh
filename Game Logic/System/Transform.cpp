@@ -99,6 +99,14 @@ glm::vec3 Transform::RotatePivot(float x, float y, float z, glm::vec3 pivot) {
 void Transform::Rotate(float x, float y, float z) {
 	localRotation += glm::vec3(x, y, z);
 }
+void Transform::RotateAlong(float angle, glm::vec3 axis) {
+	localRotation += angle * glm::normalize(axis);
+	//glm::mat4 rot_mat = glm::rotate(glm::mat4(1.0f), glm::radians(angle), axis);
+	/*glm::vec3 n_point = glm::vec3(glm::vec4(point, 1.0f) * rot_mat);
+	double cos_theta = cos(angle);
+	double sin_theta = sin(angle);
+	glm::dvec3 rotated = (v * cos_theta) + (glm::cross(k, v) * sin_theta) + (k * glm::dot(k, v)) * (1 - cos_theta);*/
+}
 glm::vec3 Transform::GetGlobalPosition() {
 	if (Parent == NULL)
 		return localPosition;

@@ -142,6 +142,7 @@
     <ClCompile Include="Game Logic\Basic Logic\Game.cpp" />
     <ClCompile Include="Game Logic\System\GameObject.cpp" />
     <ClCompile Include="Game Logic\System\KeyInput.cpp" />
+    <ClCompile Include="Game Logic\System\MouseInput.cpp" />
     <ClCompile Include="Game Logic\System\ObjLoader.cpp" />
     <ClCompile Include="Game Logic\System\Renderer.cpp" />
     <ClCompile Include="Game Logic\System\Resource_Manager.cpp" />
@@ -163,6 +164,8 @@
     <ClInclude Include="Game Logic\System\GameObject.h" />
     <ClInclude Include="Game Logic\System\IDrawable.h" />
     <ClInclude Include="Game Logic\System\KeyInput.h" />
+    <ClInclude Include="Game Logic\System\Light.h" />
+    <ClInclude Include="Game Logic\System\MouseInput.h" />
     <ClInclude Include="Game Logic\System\ObjLoader.h" />
     <ClInclude Include="Game Logic\System\Renderer.h" />
     <ClInclude Include="Game Logic\System\Resource_Manager.h" />
@@ -178,6 +181,8 @@
   <ItemGroup>
     <None Include="3d.frag" />
     <None Include="3d.vert" />
+    <None Include="light.frag" />
+    <None Include="light.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

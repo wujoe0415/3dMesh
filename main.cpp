@@ -7,6 +7,7 @@
 #include "Basic Logic/Game.h"
 #include "System/Window.h"
 #include "System/KeyInput.h"
+#include "System/MouseInput.h"
 
 using namespace std;
 void CloseWindow()
@@ -32,6 +33,7 @@ int main(void)
     KeyInput* keyinputs = new KeyInput(inputList);
     // Initialize Input callback*/
     KeyInput::setupKeyInputs(*window);
+    MouseInput::setupMouseInputs(*window);
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window->sWindow))
     {
