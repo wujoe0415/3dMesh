@@ -34,8 +34,8 @@ void Game::InitGame() {
 }
 void Game::Draw() {
 	dino->Draw(renderer);
-	for (auto light : lights)
-		light->Render(renderer);
+	/*for (auto light : lights)
+		light->Render(renderer);*/
 }
 void Game::GameLoop() {
 	float deltaTime = glfwGetTime() - totalTime;

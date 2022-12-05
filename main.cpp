@@ -44,7 +44,7 @@ int main(void)
         glfwPollEvents();
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         /* Render here */
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 
         game->Draw();
         /* Swap front and back buffers */
