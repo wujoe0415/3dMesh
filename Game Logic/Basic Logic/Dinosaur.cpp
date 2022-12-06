@@ -18,9 +18,9 @@ Dino::Dino() {
 	lastMouseisDown = false;
     objLoader = new ObjLoader();
     bool res = objLoader->loadObj("Dino.obj", vertices, uvs, normals);
-	/*if(res)
+	if(res)
 		renderer->ChangeVertex(vertices, objLoader->vertexIndices);
-	Normalize();*/
+	Normalize();
 	inputList.push_back(GLFW_MOUSE_BUTTON_LEFT);
 	mouse = new MouseInput(inputList);
 	// Initialize Input callback
