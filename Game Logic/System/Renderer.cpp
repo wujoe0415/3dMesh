@@ -132,7 +132,52 @@ void Renderer::Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, gl
 	texture.Bind();
 
 	this->shader.Use();
-	//shader.SetVector3f("light.position", 1.2f, 1.0f, 1.0f);
+	glm::vec3 pointLightPositions[] = {
+		glm::vec3(-2.0f,  1.0f,  2.0f),
+		glm::vec3(1.0f + sin(glfwGetTime()) * 2.0f, sin(glfwGetTime() / 2.0f) * 3.0f, -1.0f),
+		glm::vec3(3.0f,  -2.0f, 3.0f),
+		glm::vec3(2.0f,  0.0f, -3.0f)
+	};
+	// point light 1
+	shader.SetVector3f("pointLights[0].position", pointLightPositions[0]);
+	shader.SetVector3f("pointLights[0].color", 0.9, 0.8, 0.68);
+	shader.SetVector3f("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
+	shader.SetVector3f("pointLights[0].diffuse", 0.3f, 0.3f, 0.3f);
+	shader.SetVector3f("pointLights[0].specular", 0.1f, 0.1f, 0.1f);
+	shader.SetFloat("pointLights[0].constant", 0.0f);
+	shader.SetFloat("pointLights[0].linear", 0.09f);
+	shader.SetFloat("pointLights[0].quadratic", 0.032f);
+	// point light 2
+	shader.SetVector3f("pointLights[1].position", pointLightPositions[1]);
+	shader.SetVector3f("pointLights[1].color", 0.3f, 0.2f, 0.5f);
+	shader.SetVector3f("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
+	shader.SetVector3f("pointLights[1].diffuse", 0.2f, 0.2f, 0.2f);
+	shader.SetVector3f("pointLights[1].specular", 0.1f, 0.2f, 0.1f);
+	shader.SetFloat("pointLights[1].constant", 0.0f);
+	shader.SetFloat("pointLights[1].linear", 0.09f);
+	shader.SetFloat("pointLights[1].quadratic", 0.032f);
+	// point light 3
+	shader.SetVector3f("pointLights[2].position", pointLightPositions[2]);
+	shader.SetVector3f("pointLights[2].color", 0.05f, 0.02f, 0.04f);
+	shader.SetVector3f("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
+	shader.SetVector3f("pointLights[2].diffuse", 0.4f, 0.4f, 0.4f);
+	shader.SetVector3f("pointLights[2].specular", 0.3f, 0.3f, 0.2f);
+	shader.SetFloat("pointLights[2].constant", 0.01f);
+	shader.SetFloat("pointLights[2].linear", 0.09f);
+	shader.SetFloat("pointLights[2].quadratic", 0.032f);
+	// point light 4
+	shader.SetVector3f("pointLights[3].position", pointLightPositions[3]);
+	shader.SetVector3f("pointLights[3].color", 1.0f, 0.0f, 1.0f);
+	shader.SetVector3f("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
+	shader.SetVector3f("pointLights[3].diffuse", 0.8f, 0.7f, 0.8f);
+	shader.SetVector3f("pointLights[3].specular", 0.2f, 0.2f, 0.3f);
+	shader.SetFloat("pointLights[3].constant", 0.5f);
+	shader.SetFloat("pointLights[3].linear", 0.09f);
+	shader.SetFloat("pointLights[3].quadratic", 0.032f);
+	//glm::vec2 lightPosition;
+	//lightPosition.x = 1.0f + sin(glfwGetTime()) * 2.0f;
+	//lightPosition.y = sin(glfwGetTime() / 2.0f) * 1.0f;
+	//shader.SetVector3f("light.position", lightPosition.x, lightPosition.y, 1.0f);
 	//shader.SetVector3f("viewPos", 0.0f, 0.0f, 3.0f);
 	//// light properties
 	//shader.SetVector3f("light.ambient", 1.0f, 1.0f, 1.0f); // note that all light colors are set at full intensity
@@ -140,17 +185,10 @@ void Renderer::Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, gl
 	//shader.SetVector3f("light.specular", 1.0f, 1.0f, 1.0f);
 
 	//// material properties
-	//shader.SetVector3f("material.ambient", 0.2f, 0.2f, 0.2f);
-	//shader.SetVector3f("material.diffuse", 1.0f, 0.5f, 1.0f);
-	//shader.SetVector3f("material.specular", 0.2f, 0.2f, 0.2f);
-	//shader.SetFloat("material.shininess", 1.0f);
-	glm::vec2 lightPosition;
-	lightPosition.x = 1.0f + sin(glfwGetTime()) * 2.0f;
-	lightPosition.y = sin(glfwGetTime() / 2.0f) * 1.0f;
-	shader.SetVector3f("objectColor", 1.0f, 1.0f, 1.0f);
-	shader.SetVector3f("lightColor", 1.0f, 1.0f, 1.0f);
-	shader.SetVector3f("lightPos", lightPosition.x, lightPosition.y, 4.0f);
-	shader.SetVector3f("viewPos", glm::vec3(0.0f, 0.0f, -4.0f));
+	shader.SetVector3f("material.ambient", 0.2f, 0.2f, 0.2f);
+	shader.SetVector3f("material.diffuse", 1.0f, 0.5f, 1.0f);
+	shader.SetVector3f("material.specular", 0.2f, 0.2f, 0.2f);
+	shader.SetFloat("material.shininess", 32.0f);
 	
 	glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)Window::getInstance().getWindowWidth() / (float)Window::getInstance().getWindowHeight(), 0.1f, 100.0f);
 	shader.SetMatrix4("projection", projection);

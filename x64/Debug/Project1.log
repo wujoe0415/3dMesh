@@ -1,13 +1,4 @@
 ﻿  Renderer.cpp
 D:\OpenGL Project\3dMesh\Project1\Game Logic\System\Renderer.cpp(109,30): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\OpenGL Project\3dMesh\Project1\Game Logic\System\Renderer.cpp(148,25): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\OpenGL Project\3dMesh\Project1\Game Logic\System\Renderer.cpp(149,46): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
+D:\OpenGL Project\3dMesh\Project1\Game Logic\System\Renderer.cpp(143,59): warning C4305: 'argument': truncation from 'double' to 'float'
   Project1.vcxproj -> D:\OpenGL Project\3dMesh\x64\Debug\Project1.exe
