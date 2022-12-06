@@ -1,4 +1,31 @@
-﻿  Renderer.cpp
-D:\OpenGL Project\3dMesh\Project1\Game Logic\System\Renderer.cpp(109,30): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\OpenGL Project\3dMesh\Project1\Game Logic\System\Renderer.cpp(143,59): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  Dinosaur.cpp
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(35,72): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(38,12): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(31,12): warning C4101: 'a': unreferenced local variable
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(47,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(47,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(55,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(55,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(62,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.h(52,9): warning C4101: 'curPos': unreferenced local variable
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.cpp(37,10): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.cpp(40,12): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\OpenGL Project\3dMesh\Project1\Game Logic\Basic Logic\Dinosaur.cpp(44,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Project1.vcxproj -> D:\OpenGL Project\3dMesh\x64\Debug\Project1.exe

@@ -41,7 +41,7 @@ void Dino::Normalize()
 		if (max < next)
 			max = next;
 	}
-	float scaler = (float)1 / max;
+	float scaler = (float)1 / max * 1.7;
 	cout << scaler;
 	transform->SetScale(glm::vec3(scaler, scaler, scaler));
 } 
