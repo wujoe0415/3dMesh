@@ -133,14 +133,14 @@ void Renderer::Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, gl
 
 	this->shader.Use();
 	glm::vec3 pointLightPositions[] = {
-		glm::vec3(-2.0f,  1.0f,  2.0f),
-		glm::vec3(1.0f + sin(glfwGetTime()) * 2.0f, sin(glfwGetTime() / 2.0f) * 3.0f, -1.0f),
-		glm::vec3(3.0f,  -2.0f, 3.0f),
-		glm::vec3(2.0f,  0.0f, -3.0f)
+		glm::vec3(2.0f,  3.0f,  -3.0f),
+		glm::vec3(1.0f + sin(glfwGetTime()) * 2.0f, sin(glfwGetTime() / 2.0f) * 2.0f, 3.0f),
+		glm::vec3(-3.0f,  3.0f, -4.0f),
+		glm::vec3(3.0f,  -5.0f, -3.0f)
 	};
 	// point light 1
 	shader.SetVector3f("pointLights[0].position", pointLightPositions[0]);
-	shader.SetVector3f("pointLights[0].color", 0.9, 0.8, 0.68);
+	shader.SetVector3f("pointLights[0].color", 0.996f, 0.7968f, 0.5976f);
 	shader.SetVector3f("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
 	shader.SetVector3f("pointLights[0].diffuse", 0.3f, 0.3f, 0.3f);
 	shader.SetVector3f("pointLights[0].specular", 0.1f, 0.1f, 0.1f);
@@ -149,7 +149,7 @@ void Renderer::Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, gl
 	shader.SetFloat("pointLights[0].quadratic", 0.032f);
 	// point light 2
 	shader.SetVector3f("pointLights[1].position", pointLightPositions[1]);
-	shader.SetVector3f("pointLights[1].color", 0.3f, 0.2f, 0.5f);
+	shader.SetVector3f("pointLights[1].color", 0.996f, 0.8945f, 0.7968f);
 	shader.SetVector3f("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
 	shader.SetVector3f("pointLights[1].diffuse", 0.2f, 0.2f, 0.2f);
 	shader.SetVector3f("pointLights[1].specular", 0.1f, 0.2f, 0.1f);
@@ -158,7 +158,7 @@ void Renderer::Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, gl
 	shader.SetFloat("pointLights[1].quadratic", 0.032f);
 	// point light 3
 	shader.SetVector3f("pointLights[2].position", pointLightPositions[2]);
-	shader.SetVector3f("pointLights[2].color", 0.05f, 0.02f, 0.04f);
+	shader.SetVector3f("pointLights[2].color", 0.7968f, 0.5f, 0.996f);
 	shader.SetVector3f("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
 	shader.SetVector3f("pointLights[2].diffuse", 0.4f, 0.4f, 0.4f);
 	shader.SetVector3f("pointLights[2].specular", 0.3f, 0.3f, 0.2f);
@@ -167,7 +167,7 @@ void Renderer::Render(glm::vec3 position, glm::vec3 rotation, glm::vec3 size, gl
 	shader.SetFloat("pointLights[2].quadratic", 0.032f);
 	// point light 4
 	shader.SetVector3f("pointLights[3].position", pointLightPositions[3]);
-	shader.SetVector3f("pointLights[3].color", 1.0f, 0.0f, 1.0f);
+	shader.SetVector3f("pointLights[3].color", 0.398f, 0.695f, 0.996f);
 	shader.SetVector3f("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
 	shader.SetVector3f("pointLights[3].diffuse", 0.8f, 0.7f, 0.8f);
 	shader.SetVector3f("pointLights[3].specular", 0.2f, 0.2f, 0.3f);

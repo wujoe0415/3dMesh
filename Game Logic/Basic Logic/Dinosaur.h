@@ -3,7 +3,7 @@
 #include <vector>
 #include <map>
 #include "System/Renderer.h"
-#include "System/SphereRenderer.h";
+#include "System/SphereRenderer.h"
 #include "System/ObjLoader.h"
 #include "System/Window.h"
 #include "System/MouseInput.h"
